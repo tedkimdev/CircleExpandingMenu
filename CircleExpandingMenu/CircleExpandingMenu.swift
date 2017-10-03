@@ -83,8 +83,6 @@ open class CircleExpandingMenu: UIButton {
   //MARK: Actions
   
   @objc fileprivate func buttonDidTap() {
-    print("buttonDidTap")
-    
     var isOpen = buttonsIsOpen()
     
     if !isOpen {
@@ -192,8 +190,6 @@ extension CircleExpandingMenu {
   }
   
   @objc fileprivate func menuCircleButtonHandler(_ sender: CircleExpandingMenuButton) {
-    print("menuCircleButtonHandler")
-    
     guard let platform = self.platform else { return }
     
     self.delegate?.circleExpandingMenu?(self, buttonWillSelected: sender, atIndex: sender.tag)
@@ -201,11 +197,18 @@ extension CircleExpandingMenu {
     sender.tapBounceAnimation()
     
     self.isSelected = false
-    self.selectAnimation(isSelected: self.isSelected)
+    if self.isSelected {
+      self.selectedIconView?.alpha = 1.0
+      self.normalIconView?.alpha = 0.0
+    } else {
+      self.selectedIconView?.alpha = 0.0
+      self.normalIconView?.alpha = 1.0
+    }
+    
     self.alpha = 1.0
     
-    self.buttonsAnimateAfterSelected(0.2, delay: 0.3, completion: nil)
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+    self.buttonsAnimateAfterSelected(0.2, delay: 0, completion: nil)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
       self.delegate?.circleExpandingMenu?(self, buttonDidSelected: sender, atIndex: sender.tag)
       if platform.superview != nil {
         self.platform?.removeFromSuperview()
