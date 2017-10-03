@@ -18,5 +18,37 @@ pod 'CircleExpandingMenu'
 import CircleExpandingMenu
 ```
 
+#### programmatically
+```swift
+let circleExpandingMenu = CircleExpandingMenu(
+  frame: CGRect(x: self.view.bounds.width - 100, y: self.view.bounds.height - 100, width: 50, height: 50),
+  normalIcon: "icon-menu",
+  selectedIcon: "icon-close",
+  buttonsCount: self.items.count,
+  duration: 2,
+  distance: 10
+)
+circleExpandingMenu.delegate = self
+circleExpandingMenu.backgroundColor = .green
+circleExpandingMenu.layer.cornerRadius = circleExpandingMenu.frame.size.width / 2
+    
+self.view.addSubview(circleExpandingMenu)
+```
+#### delegate methods
+```swift
+// configure buttons
+@objc optional func circleExpandingMenu(_ circleExpandingMenu: CircleExpandingMenu, willDisplay button: UIButton, atIndex: Int)
+  
+// call before animation
+@objc optional func circleExpandingMenu(_ circleExpandingMenu: CircleExpandingMenu, buttonWillSelected button: UIButton, atIndex: Int)
+  
+// call after animation
+@objc optional func circleExpandingMenu(_ circleExpandingMenu: CircleExpandingMenu, buttonDidSelected button: UIButton, atIndex: Int)
+  
+// call upon cancel of the menu
+@objc optional func menuCollapsed(_ circleExpandingMenu: CircleExpandingMenu)
+  
+```
+
 ## License
 CircleExpandingMenu is available under the MIT license. See the LICENSE file for more info.
