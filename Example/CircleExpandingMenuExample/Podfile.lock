@@ -1,0 +1,12 @@
+PODS:
+  - CircleExpandingMenu (1.0.0)
+
+DEPENDENCIES:
+  - CircleExpandingMenu
+
+SPEC CHECKSUMS:
+  CircleExpandingMenu: 15e850c874b0be3ea48f7093fb98a73908973d7a
+
+PODFILE CHECKSUM: d8aa9211ba299f735654b9134abd78cb14c762d1
+
+COCOAPODS: 1.2.1
