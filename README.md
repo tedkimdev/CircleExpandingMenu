@@ -37,13 +37,25 @@ self.view.addSubview(circleExpandingMenu)
 #### delegate methods
 ```swift
 // configure buttons
-@objc optional func circleExpandingMenu(_ circleExpandingMenu: CircleExpandingMenu, willDisplay button: UIButton, atIndex: Int)
+@objc optional func circleExpandingMenu(
+  _ circleExpandingMenu: CircleExpandingMenu,
+  willDisplay button: UIButton, 
+  atIndex: Int
+)
   
 // call before animation
-@objc optional func circleExpandingMenu(_ circleExpandingMenu: CircleExpandingMenu, buttonWillSelected button: UIButton, atIndex: Int)
+@objc optional func circleExpandingMenu(
+  _ circleExpandingMenu: CircleExpandingMenu,
+  buttonWillSelected button: UIButton,
+  atIndex: Int
+)
   
 // call after animation
-@objc optional func circleExpandingMenu(_ circleExpandingMenu: CircleExpandingMenu, buttonDidSelected button: UIButton, atIndex: Int)
+@objc optional func circleExpandingMenu(
+  _ circleExpandingMenu: CircleExpandingMenu, 
+  buttonDidSelected button: UIButton, 
+  atIndex: Int
+)
   
 // call upon cancel of the menu
 @objc optional func menuCollapsed(_ circleExpandingMenu: CircleExpandingMenu)
