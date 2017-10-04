@@ -5,7 +5,7 @@ A simple circle expanding menu
 
 ## Installation
 
-- For iOS 8+ projects with [CocoaPods](http://cocoapods.org):
+- For iOS 9+ projects with [CocoaPods](http://cocoapods.org):
 ```ruby
 pod 'CircleExpandingMenu'
 ```
