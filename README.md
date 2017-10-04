@@ -1,6 +1,7 @@
 # CircleExpandingMenu
 A simple circle expanding menu
 
+<img src="https://user-images.githubusercontent.com/20268356/31155418-15035f16-a87c-11e7-8662-718fc9aa299a.gif" width="250">
 
 ## Installation
 
