@@ -32,40 +32,11 @@ internal class CircleExpandingMenuButton: UIButton {
     container.translatesAutoresizingMaskIntoConstraints = false
     platform.addSubview(container)
     
-    // added constraints
-    let height = NSLayoutConstraint(item: container,
-                                    attribute: .height,
-                                    relatedBy: .equal,
-                                    toItem: nil,
-                                    attribute: .height,
-                                    multiplier: 1,
-                                    constant: size.height)
-    height.identifier = "height"
-    container.addConstraint(height)
-    
-    container.addConstraint(NSLayoutConstraint(item: container,
-                                               attribute: .width,
-                                               relatedBy: .equal,
-                                               toItem: nil,
-                                               attribute: .width,
-                                               multiplier: 1,
-                                               constant: size.width))
-    
-    platform.addConstraint(NSLayoutConstraint(item: platform,
-                                              attribute: .centerX,
-                                              relatedBy: .equal,
-                                              toItem: container,
-                                              attribute: .centerX,
-                                              multiplier: 1,
-                                              constant:0))
-    
-    platform.addConstraint(NSLayoutConstraint(item: platform,
-                                              attribute: .centerY,
-                                              relatedBy: .equal,
-                                              toItem: container,
-                                              attribute: .centerY,
-                                              multiplier: 1,
-                                              constant:0))
+    // constraints
+    container.heightAnchor.constraint(equalToConstant: size.height).isActive = true
+    container.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+    container.centerXAnchor.constraint(equalTo: platform.centerXAnchor).isActive = true
+    container.centerYAnchor.constraint(equalTo: platform.centerYAnchor).isActive = true
     
     return container
   }
@@ -77,7 +48,7 @@ internal class CircleExpandingMenuButton: UIButton {
 
 extension CircleExpandingMenuButton {
   
-  internal func showAnimation(distance: CGFloat, duration: Double, delay: Double = 0) {
+  internal func showAnimation(distance: CGFloat, duration: Double, delay: Double = 0, animationOption: UIViewAnimationOptions = .curveEaseIn) {
     self.alpha = 0
     self.frame.origin.y += distance
     self.transform = CGAffineTransform(scaleX: 0, y: 0)
@@ -87,7 +58,7 @@ extension CircleExpandingMenuButton {
       delay: delay,
       usingSpringWithDamping: 0.7,
       initialSpringVelocity: 0,
-      options: UIViewAnimationOptions.curveLinear,
+      options: animationOption,
       animations: { () -> Void in
         self.superview?.layoutIfNeeded()
         self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
@@ -97,11 +68,13 @@ extension CircleExpandingMenuButton {
     })
   }
   
-  internal func hideAnimation(distance: CGFloat, duration: Double, delay: Double = 0) {
+  internal func hideAnimation(distance: CGFloat, duration: Double, delay: Double = 0, animationOption: UIViewAnimationOptions = .curveEaseOut) {
     UIView.animate(
       withDuration: duration,
       delay: delay,
-      options: UIViewAnimationOptions.curveEaseIn,
+      usingSpringWithDamping: 0.7,
+      initialSpringVelocity: 0,
+      options: animationOption,
       animations: { () -> Void in
         self.superview?.layoutIfNeeded()
         self.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
@@ -112,14 +85,14 @@ extension CircleExpandingMenuButton {
     })
   }
   
-  internal func tapBounceAnimation() {
+  internal func tapBounceAnimation(animationOption: UIViewAnimationOptions = .curveLinear) {
     self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
     UIView.animate(
       withDuration: 0.3,
       delay: 0,
       usingSpringWithDamping: 0.3,
       initialSpringVelocity: 5,
-      options: UIViewAnimationOptions.curveLinear,
+      options: animationOption,
       animations: { () -> Void in
         self.transform = CGAffineTransform(scaleX: 1, y: 1)
     },

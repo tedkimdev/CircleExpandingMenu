@@ -10,7 +10,6 @@
 		BD4A3E611F83341900642B28 /* CircleExpandingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = BD4A3E5F1F83341900642B28 /* CircleExpandingMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD4A3E681F83379C00642B28 /* CircleExpandingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A3E671F83379C00642B28 /* CircleExpandingMenu.swift */; };
 		BD4A3E6A1F83380C00642B28 /* CircleExpandingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A3E691F83380C00642B28 /* CircleExpandingMenuDelegate.swift */; };
-		BD4A3E6C1F83385E00642B28 /* UIColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A3E6B1F83385E00642B28 /* UIColor+rgb.swift */; };
 		BD4A3E6E1F83387A00642B28 /* CircleExpandingMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A3E6D1F83387A00642B28 /* CircleExpandingMenuButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,7 +19,6 @@
 		BD4A3E601F83341900642B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4A3E671F83379C00642B28 /* CircleExpandingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleExpandingMenu.swift; sourceTree = "<group>"; };
 		BD4A3E691F83380C00642B28 /* CircleExpandingMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleExpandingMenuDelegate.swift; sourceTree = "<group>"; };
-		BD4A3E6B1F83385E00642B28 /* UIColor+rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgb.swift"; sourceTree = "<group>"; };
 		BD4A3E6D1F83387A00642B28 /* CircleExpandingMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleExpandingMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +57,6 @@
 				BD4A3E691F83380C00642B28 /* CircleExpandingMenuDelegate.swift */,
 				BD4A3E671F83379C00642B28 /* CircleExpandingMenu.swift */,
 				BD4A3E6D1F83387A00642B28 /* CircleExpandingMenuButton.swift */,
-				BD4A3E6B1F83385E00642B28 /* UIColor+rgb.swift */,
 			);
 			path = CircleExpandingMenu;
 			sourceTree = "<group>";
@@ -144,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD4A3E6C1F83385E00642B28 /* UIColor+rgb.swift in Sources */,
 				BD4A3E6A1F83380C00642B28 /* CircleExpandingMenuDelegate.swift in Sources */,
 				BD4A3E681F83379C00642B28 /* CircleExpandingMenu.swift in Sources */,
 				BD4A3E6E1F83387A00642B28 /* CircleExpandingMenuButton.swift in Sources */,
