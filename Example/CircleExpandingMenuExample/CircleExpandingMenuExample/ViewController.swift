@@ -15,7 +15,7 @@ class ViewController: UIViewController {
   let items: [(icon: String, color: UIColor)] = [
     ("icon-home", UIColor(red:0.19, green:0.57, blue:1, alpha:1)),
     ("icon-search", UIColor(red:0.22, green:0.74, blue:0, alpha:1)),
-//    ("icon-createNew", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1)),
+    ("icon-createNew", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1)),
 //    ("icon-edit", UIColor(red:0.51, green:0.15, blue:1, alpha:1)),
     ("icon-setting", UIColor(red:1, green:0.39, blue:0, alpha:1)),
   ]
@@ -33,14 +33,40 @@ class ViewController: UIViewController {
       normalIcon: "icon-menu",
       selectedIcon: "icon-close",
       buttonsCount: self.items.count,
-      duration: 2,
+      duration: 0.5,
       distance: 10
     )
+    
     circleButton.backgroundColor = .green
     circleButton.delegate = self
     circleButton.layer.cornerRadius = circleButton.frame.size.width / 2.0
     
     self.view.addSubview(circleButton)
+    
+    
+//    // init 2
+//    let subButtons: [UIButton] = [
+//      UIButton(),
+//
+//    ]
+//    let circleButton2 = CircleExpandingMenu(frame:CGRect(x: self.view.bounds.width - 200, y: self.view.bounds.height - 100, width: 50, height: 50)
+//      , buttons: subButtons,
+//        normalImage: UIImage(named: "icon-menu"),
+//        selectedImage: UIImage(named: "icon-close"),
+//        buttonsCount: subButtons.count,
+//        duration: 0.5,
+//        distance: 20
+//      )
+//    circleButton2.backgroundColor = .blue
+//    self.view.addSubview(circleButton2)
+////      CircleExpandingMenu(
+////      frame: CGRect(x: self.view.bounds.width - 100, y: self.view.bounds.height - 100, width: 50, height: 50),
+////      normalIcon: "icon-menu",
+////      selectedIcon: "icon-close",
+////      buttonsCount: self.items.count,
+////      duration: 0.5,
+////      distance: 10
+////    )
   }
   
   override func didReceiveMemoryWarning() {
