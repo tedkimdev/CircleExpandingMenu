@@ -42,31 +42,6 @@ class ViewController: UIViewController {
     circleButton.layer.cornerRadius = circleButton.frame.size.width / 2.0
     
     self.view.addSubview(circleButton)
-    
-    
-//    // init 2
-//    let subButtons: [UIButton] = [
-//      UIButton(),
-//
-//    ]
-//    let circleButton2 = CircleExpandingMenu(frame:CGRect(x: self.view.bounds.width - 200, y: self.view.bounds.height - 100, width: 50, height: 50)
-//      , buttons: subButtons,
-//        normalImage: UIImage(named: "icon-menu"),
-//        selectedImage: UIImage(named: "icon-close"),
-//        buttonsCount: subButtons.count,
-//        duration: 0.5,
-//        distance: 20
-//      )
-//    circleButton2.backgroundColor = .blue
-//    self.view.addSubview(circleButton2)
-////      CircleExpandingMenu(
-////      frame: CGRect(x: self.view.bounds.width - 100, y: self.view.bounds.height - 100, width: 50, height: 50),
-////      normalIcon: "icon-menu",
-////      selectedIcon: "icon-close",
-////      buttonsCount: self.items.count,
-////      duration: 0.5,
-////      distance: 10
-////    )
   }
   
   override func didReceiveMemoryWarning() {
