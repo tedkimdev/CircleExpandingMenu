@@ -10,6 +10,11 @@ A simple circle expanding menu
 pod 'CircleExpandingMenu'
 ```
 
+- For iOS 9+ projects with [Carthage](https://github.com/Carthage/Carthage):
+```
+github "00aney/CircleExpandingMenu"
+```
+
 ## Usage
 
 ```swift
